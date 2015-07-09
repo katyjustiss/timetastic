@@ -1,10 +1,12 @@
 angular.module('timer')
   .controller('MainCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-    $scope.counter = 0;
+
+    $scope.counter = '0';
+
     var userTimeout = null; // the current timeoutID
     // actual timer method, counts down every second, stops on zero
     $scope.onTimeout = function() {
-        if($scope.counter ===  0) {
+        if($scope.counter ===  '0') {
             $scope.$broadcast('timer-stopped', 0);
             $timeout.cancel(userTimeout);
             return;
@@ -13,7 +15,12 @@ angular.module('timer')
         userTimeout = $timeout($scope.onTimeout, 1000);
     };
     $scope.startTimer = function() {
-        userTimeout = $timeout($scope.onTimeout, 1000);
+        userTimeout = $timeout($scope.onTimeout, 1);
+    };
+
+    $scope.resetTimer = function () {
+      $scope.counter = '0';
+      $timeout.cancel(userTimeout);
     };
     // stops and resets the current timer
     $scope.stopTimer = function() {
@@ -28,8 +35,13 @@ angular.module('timer')
         }
     });
     //grabbing numbers
+
     $scope.number = function(num){
       num = num.toString();
+      if($scope.counter === '0'){
+        $scope.counter = num;
+      } else {
       $scope.counter += num;
     }
+  }
 }]);
