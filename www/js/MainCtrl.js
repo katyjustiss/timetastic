@@ -32,6 +32,10 @@ angular.module('timer')
     $scope.$on('timer-stopped', function(event, remaining) {
         if(remaining === 0) {
           console.log('your time ran out!');
+          navigator.vibrate(3000);
+          navigator.notification.beep(5);
+          navigator.notification.alert(
+            'RED ALERT');
         }
     });
     //grabbing numbers

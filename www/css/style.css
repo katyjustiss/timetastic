@@ -1,4 +1,7 @@
 /* Empty. Add your own CSS if you like */
+#header {
+  background-color: white;
+}
 .countdown {
   margin-top: 8%;
   margin-bottom: 8%;
