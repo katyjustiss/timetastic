@@ -1,6 +1,6 @@
 angular.module('timer')
   .controller('MainCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-    $scope.counter = 5;
+    $scope.counter = 0;
     var userTimeout = null; // the current timeoutID
     // actual timer method, counts down every second, stops on zero
     $scope.onTimeout = function() {
@@ -18,7 +18,7 @@ angular.module('timer')
     // stops and resets the current timer
     $scope.stopTimer = function() {
         $scope.$broadcast('timer-stopped', $scope.counter);
-        $scope.counter = 30;
+        // $scope.counter = 30;
         $timeout.cancel(userTimeout);
     };
     // triggered, when the timer stops, you can do something here, maybe show a visual indicator or vibrate the device
@@ -27,4 +27,9 @@ angular.module('timer')
             console.log('your time ran out!');
         }
     });
+    //grabbing numbers
+    $scope.number = function(num){
+      num = num.toString();
+      $scope.counter += num;
+    }
 }]);

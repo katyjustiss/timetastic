@@ -31,9 +31,26 @@
       </ion-header-bar>
       <ion-content>
         <h1>{{ hello }} </h1>
-          {{ counter }}
+        <h3>{{ counter }} </h3>
           <button class="button button-positive"ng-click ='startTimer()'>Start</button>
           <button class="button button-assertive" ng-click ='stopTimer()'>Stop</button>
+
+        <div class="button-bar">
+          <a ng-click="number(1)" class="button">1</a>
+          <a ng-click="number(2)" class="button">2</a>
+          <a ng-click="number(3)" class="button">3</a>
+          <a ng-click="number(4)" class="button">4</a>
+        </div>
+        <div class="button-bar">
+          <a ng-click="number(5)" class="button">5</a>
+          <a ng-click="number(6)" class="button">6</a>
+          <a ng-click="number(7)" class="button">7</a>
+          <a ng-click="number(8)" class="button">8</a>
+        </div>
+        <div class="button-bar">
+          <a ng-click="number(9)" class="button">9</a>
+          <a ng-click="number(0)" class="button">0</a>
+        </div>
       </ion-content>
     </ion-pane>
   </body>
