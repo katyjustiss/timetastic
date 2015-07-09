@@ -7,7 +7,7 @@ angular.module('timer')
     // actual timer method, counts down every second, stops on zero
     $scope.onTimeout = function() {
         if($scope.counter ===  0) {
-            $scope.$broadcast('timer-stopped', 0);
+            $scope.$broadcast('timer-stopped', '0');
             $timeout.cancel(userTimeout);
             return;
         }
@@ -31,11 +31,10 @@ angular.module('timer')
     // triggered, when the timer stops, you can do something here, maybe show a visual indicator or vibrate the device
     $scope.$on('timer-stopped', function(event, remaining) {
         if(remaining === 0) {
-            console.log('your time ran out!');
+          console.log('your time ran out!');
         }
     });
     //grabbing numbers
-
     $scope.number = function(num){
       num = num.toString();
       if($scope.counter === '0'){
@@ -44,5 +43,5 @@ angular.module('timer')
         $scope.counter += num;
       }
     }
-  }
+
 }]);
