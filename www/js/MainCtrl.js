@@ -6,7 +6,7 @@ angular.module('timer')
     var userTimeout = null; // the current timeoutID
     // actual timer method, counts down every second, stops on zero
     $scope.onTimeout = function() {
-        if($scope.counter ===  '0') {
+        if($scope.counter ===  0) {
             $scope.$broadcast('timer-stopped', 0);
             $timeout.cancel(userTimeout);
             return;
