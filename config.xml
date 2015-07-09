@@ -2,10 +2,10 @@
 <widget id="com.ionicframework.timetastic655970" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>timetastic</name>
   <description>
-        An Ionic Framework and Cordova project.
+        A timeless app for times like these.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="katy.justiss@gmail.com, bcpaff@gmail.com" href="http://ionicframework.com/">
+      Katy Justiss, Brien Pafford
     </author>
   <content src="index.html"/>
   <access origin="*"/>
