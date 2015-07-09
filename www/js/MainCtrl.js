@@ -1,6 +1,6 @@
 angular.module('timer')
   .controller('MainCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-    $scope.counter = 0;
+    $scope.counter = '0';
     var userTimeout = null; // the current timeoutID
     // actual timer method, counts down every second, stops on zero
     $scope.onTimeout = function() {
@@ -30,6 +30,10 @@ angular.module('timer')
     //grabbing numbers
     $scope.number = function(num){
       num = num.toString();
-      $scope.counter += num;
+      if($scope.counter === '0'){
+        $scope.counter = num;
+      }else{
+        $scope.counter += num;
+      }
     }
 }]);
